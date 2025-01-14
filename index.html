@@ -11,7 +11,7 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play AnalyticalChemistry.</tw-noscript></noscript></tw-story>
 <tw-storydata name="AnalyticalChemistry" startnode="1" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="D8D65748-B9C2-4D32-B8BC-5670FAF8C779" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Starting Passage" tags="" position="300,350" size="100,100">
 Welcome to your Analytical Chemistry Lab Game!
-(set: $levelThresholds to (a: 10, 40, 80, 120, 200, 240, 300))  &lt;!-- Points required to reach each level --&gt;
+(set: $levelThresholds to (a: 10, 40, 80, 120, 200, 240, 300, 1000))  &lt;!-- Points required to reach each level --&gt;
 (link: &quot;Load Progress&quot;)[
     (load-game: &quot;studentSave&quot;)
     Welcome back, $studentName! Your progress has been loaded.
@@ -27,7 +27,7 @@ Welcome to your Analytical Chemistry Lab Game!
 ]]
 Don&#39;t forget to save early, and save often.  Remember that saves are device specific, so if you switch to a new device, progress will be lost (you can get around this by reentering codes, but it&#39;s a lot of work.)
 
-(set: $levelTitles to (a: &#39;Novice&#39;, &#39;Trainee Analyst&#39;, &#39;Advanced Trainee&#39;, &#39;Research Chemist&#39;, &#39;Research Specialist&#39; , &#39;Master Analyst&#39;, &#39;Master Analyst&#39;))</tw-passagedata><tw-passagedata pid="2" name="Training Lab" tags="" position="650,150" size="100,100">(text-colour:yellow)[&#39;&#39;Hello, $title $studentName!  Welcome to the Training Lab. &#39;&#39;]
+(set: $levelTitles to (a: &#39;Novice&#39;, &#39;Trainee Analyst&#39;, &#39;Advanced Trainee&#39;, &#39;Research Chemist&#39;, &#39;Research Specialist&#39; , &#39;Master Analyst&#39;, &#39;Advanced Analyst&#39;, &#39;Professional Chemist&#39;,&#39;Professor&#39;))</tw-passagedata><tw-passagedata pid="2" name="Training Lab" tags="" position="650,150" size="100,100">(text-colour:yellow)[&#39;&#39;Hello, $title $studentName!  Welcome to the Training Lab. &#39;&#39;]
 (set: $currentThreshold to $levelThresholds&#39;s $level)\
 &lt;!-- Check if points are greater than or equal to the threshold --&gt;
 (if: $points &gt;= $currentThreshold)[
@@ -108,6 +108,7 @@ Your current level:  $level]
     (if: $toolsMastered &lt; 5)[ Master at least 5 techniques. ]
     (if: $points &lt; 80)[ Earn at least 80 points. ]
 ]
+
 [[Side Quests]] - Explore advanced challenges and earn rewards!
 
 (text-colour:magenta)[(link: &quot;Save Progress&quot;)[
@@ -115,26 +116,26 @@ Your current level:  $level]
     Your progress has been saved!
 ]
 ]
-(set: $GCMSCodes to (a: &#39;AA&#39;,&#39;G1123&#39;, &#39;G1456&#39;, &#39;G1789&#39;, &#39;G1012&#39;, &#39;G1345&#39;))
-(set: $NMRCodes to (a: &#39;AA&#39;,&#39;N745&#39;, &#39;N416&#39;, &#39;N849&#39;, &#39;N012&#39;, &#39;N845&#39;))
-(set: $IRCodes to (a: &#39;AA&#39;,&#39;R89&#39;, &#39;R31&#39;, &#39;R84&#39;, &#39;R30&#39;, &#39;R67&#39;))
-(set: $MTCodes to (a: &#39;AA&#39;,&#39;M453&#39;, &#39;M913&#39;, &#39;M292&#39;, &#39;M371&#39;, &#39;M559&#39;))
-(set: $TitCodes to (a: &#39;AA&#39;,&#39;T112&#39;, &#39;T291&#39;, &#39;T647&#39;, &#39;T872&#39;, &#39;T015&#39;))
-(set: $UVCodes to (a: &#39;AA&#39;,&#39;U762&#39;, &#39;U491&#39;, &#39;U330&#39;, &#39;U292&#39;, &#39;U954&#39;))
-(set: $CCCodes to (a: &#39;AA&#39;,&#39;C897&#39;, &#39;C434&#39;, &#39;C777&#39;, &#39;C510&#39;, &#39;C987&#39;))
-(set: $HPLCCodes to (a: &#39;AA&#39;, &#39;H220&#39;, &#39;H302&#39;, &#39;H443&#39;, &#39;H298&#39;, &#39;H409&#39;))
-(set: $qualCodes to (a: &#39;AA&#39;, &#39;L20&#39;, &#39;L02&#39;, &#39;L43&#39;, &#39;L28&#39;, &#39;L09&#39;))
-(set: $quantCodes to (a: &#39;AA&#39;, &#39;T22&#39;, &#39;T02&#39;, &#39;T73&#39;, &#39;T98&#39;, &#39;T49&#39;))
-(set: $sepCodes to (a: &#39;AA&#39;, &#39;S122&#39;, &#39;S102&#39;, &#39;S173&#39;, &#39;S198&#39;, &#39;S149&#39;))
-(set: $moreCodes to (a: &#39;AA&#39;, &#39;Z82&#39;, &#39;Z62&#39;, &#39;Z33&#39;, &#39;Z38&#39;, &#39;Z45&#39;))
-(set: $SQ1Codes to (a: &#39;AA&#39;, &#39;Q49&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ2Codes to (a: &#39;AA&#39;, &#39;Q69&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ3Codes to (a: &#39;AA&#39;, &#39;Q79&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ4Codes to (a: &#39;AA&#39;, &#39;Q58&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ5Codes to (a: &#39;AA&#39;, &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ6Codes to (a: &#39;AA&#39;, &#39;Q23&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ7Codes to (a: &#39;AA&#39;, &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
-(set: $SQ8Codes to (a: &#39;AA&#39;, &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $GCMSCodes to (a: &#39;G1123&#39;, &#39;G1456&#39;, &#39;G1789&#39;, &#39;G1012&#39;, &#39;G1345&#39;))
+(set: $NMRCodes to (a: &#39;N745&#39;, &#39;N416&#39;, &#39;N849&#39;, &#39;N012&#39;, &#39;N845&#39;))
+(set: $IRCodes to (a: &#39;R89&#39;, &#39;R31&#39;, &#39;R84&#39;, &#39;R30&#39;, &#39;R67&#39;))
+(set: $MTCodes to (a: &#39;M453&#39;, &#39;M913&#39;, &#39;M292&#39;, &#39;M371&#39;, &#39;M559&#39;))
+(set: $TitCodes to (a: &#39;T112&#39;, &#39;T291&#39;, &#39;T647&#39;, &#39;T872&#39;, &#39;T015&#39;))
+(set: $UVCodes to (a: &#39;U762&#39;, &#39;U491&#39;, &#39;U330&#39;, &#39;U292&#39;, &#39;U954&#39;))
+(set: $CCCodes to (a: &#39;C897&#39;, &#39;C434&#39;, &#39;C777&#39;, &#39;C510&#39;, &#39;C987&#39;))
+(set: $HPLCCodes to (a: &#39;H220&#39;, &#39;H302&#39;, &#39;H443&#39;, &#39;H298&#39;, &#39;H409&#39;))
+(set: $qualCodes to (a: &#39;L20&#39;, &#39;L02&#39;, &#39;L43&#39;, &#39;L28&#39;, &#39;L09&#39;))
+(set: $quantCodes to (a: &#39;T22&#39;, &#39;T02&#39;, &#39;T73&#39;, &#39;T98&#39;, &#39;T49&#39;))
+(set: $sepCodes to (a: &#39;S122&#39;, &#39;S102&#39;, &#39;S173&#39;, &#39;S198&#39;, &#39;S149&#39;))
+(set: $moreCodes to (a: &#39;Z82&#39;, &#39;Z62&#39;, &#39;Z33&#39;, &#39;Z38&#39;, &#39;Z45&#39;))
+(set: $SQ1Codes to (a: &#39;Q49&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ2Codes to (a: &#39;Q69&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ3Codes to (a: &#39;Q79&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ4Codes to (a: &#39;Q58&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ5Codes to (a: &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ6Codes to (a: &#39;Q23&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ7Codes to (a: &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
+(set: $SQ8Codes to (a: &#39;Q59&#39;, &#39;Q48&#39;, &#39;Q85&#39;, &#39;Q78&#39;, &#39;Q29&#39;))
 
 </tw-passagedata><tw-passagedata pid="5" name="Research Lab" tags="" position="400,600" size="100,100">(text-colour:yellow)[&#39;&#39;Hello, $title $studentName.  Welcome to the Research Lab.&#39;&#39;]
 (set: $currentThreshold to $levelThresholds&#39;s $level)\
@@ -151,6 +152,9 @@ Your current level:  $level]
 [[Qualitative Lab]]
 [[Quantitative Lab]]
 [[Separations Lab]]
+
+Return to [[Dashboard]] 
+
 (if: $quantd is 1 and $quald is 1 and $sepd is 1)[
     [[Go to More Investigations|More]]
 ]
